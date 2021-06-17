@@ -1,9 +1,12 @@
 #include <stdio.h>
 
-int man(void) {
-	
-	char string[50];
-	strcpy(str, "Programming is like building a multilingual puzzle");
-	puts(string);
-	return 0;
+/**
+ * main - function prints exact phrase
+ * Return: 0
+*/
+int main(void)
+{
+	puts("\"Programming is like building a multilingual puzzle");
+
+	return (0);
 }
