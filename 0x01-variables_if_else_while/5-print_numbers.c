@@ -11,7 +11,8 @@ int main(void)
 
 	for (start = 48 ; start <= end ; start++)
 	{
-		putchar(start);
+		putchar(start);;
 	}
+	putchar('\n');
 	return (0);
 }
