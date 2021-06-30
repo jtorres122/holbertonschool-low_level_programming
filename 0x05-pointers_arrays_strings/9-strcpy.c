@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * *_strcpy
+ * *_strcpy - function
  * @dest: parameter
  * @src: parameter
  * Return: char
