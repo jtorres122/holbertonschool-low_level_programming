@@ -8,7 +8,7 @@
 char *cap_string(char *s)
 {
 	int len, lim, upper = 32;
-	int seps[] = {',', ';', '.', '?', '"', '(', ')', '{', '}', ' ', '\n', '\t'};
+	char seps[] = {',', ';', '.', '?', '"', '(', ')', '{', '}', ' ', '\n', '\t'};
 
 	for (len = 0 ; s[len] != '\0' ; len++)
 	{
@@ -18,6 +18,7 @@ char *cap_string(char *s)
 		}
 
 		upper = 0;
+
 
 		for (lim = 0 ; lim <= 12 ; lim++)
 		{
