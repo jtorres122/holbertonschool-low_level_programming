@@ -21,7 +21,7 @@ char *_strchr(char *s, char c)
 
 	if ('\0' == c)
 	{
-		return (s + idx);
+		return (NULL);
 	}
 
 	return (NULL);
