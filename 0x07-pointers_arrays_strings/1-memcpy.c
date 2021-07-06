@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _memset - function
+ * _memcpy - function
  * @dest: parameter
  * @src: parameter
  * @n: parameter
