@@ -19,5 +19,10 @@ char *_strchr(char *s, char c)
 		}
 	}
 
-	return ('\0');
+	if ('\0' == c)
+	{
+		return (s + idx);
+	}
+
+	return (NULL);
 }
