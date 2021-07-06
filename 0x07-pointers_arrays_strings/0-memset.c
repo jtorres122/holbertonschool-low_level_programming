@@ -3,7 +3,7 @@
 /**
  * _memset - function
  * @s: parameter
- * @d: parameter
+ * @b: parameter
  * @n: parameter
  * Return: char
  */
