@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stddef.h>
+#include <stdio.h>
 
 /**
  * _strchr - function
@@ -21,7 +22,7 @@ char *_strchr(char *s, char c)
 
 	if ('\0' == c)
 	{
-		return (NULL);
+		return (s + idx);
 	}
 
 	return (NULL);
