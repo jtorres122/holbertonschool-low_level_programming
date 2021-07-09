@@ -3,7 +3,7 @@
 /**
  * is_prime_number - function
  * @n: parameter
- * @Return: 0
+ * Return: 0
  */
 int is_prime_number(int n)
 {
@@ -20,8 +20,9 @@ int is_prime_number(int n)
 }
 /**
  * prime_checker - function
- * 
- * 
+ * @n: parameter
+ * @divisor: parameter
+ * Return: 0
  */
 int prime_checker(int n, int divisor)
 {
