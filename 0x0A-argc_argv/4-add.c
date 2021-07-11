@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - function
@@ -10,18 +8,26 @@
  */
 int main(int argc, char *argv[])
 {
-	int first, second;
+	int loop1, intcheck;
+	int sum;
 
-	if (argc != 3)
+	if (argc == 1)
 	{
-		printf("Error\n");
-		return (1);
+		printf("0\n");
 	}
 
-	first = atoi(argv[1]);
-	second = atoi(argv[2]);
-
-	printf("%d\n", first + second);
-
+	for (loop1 = 1 ; loop1 < argc ; loop1++)
+	{
+		for (intcheck = 0 ; argv[loop1][intcheck] != '\0' ; intcheck++)
+		{
+			if (!isdigit(argv[loop1][intcheck]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+		sum += atoi(argv[loop1]);
+	}
+	printf("%i\n", sum);
 	return (0);
 }
