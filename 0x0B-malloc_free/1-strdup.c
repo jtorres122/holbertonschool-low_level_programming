@@ -20,7 +20,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (len2 = 0 ; len2 < len1 ; len2++)
+	for (len2 = 0 ; len2 <= len1 ; len2++)
 	{
 		newstr[len2] = str[len2];
 	}
