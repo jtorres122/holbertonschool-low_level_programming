@@ -3,7 +3,7 @@
 /**
  * _strdup -function
  * @str: parameter
- *
+ * Return: newstr
  */
 char *_strdup(char *str)
 {
