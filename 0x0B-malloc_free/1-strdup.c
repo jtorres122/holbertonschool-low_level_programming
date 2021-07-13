@@ -10,15 +10,15 @@ char *_strdup(char *str)
 	unsigned int len1, len2;
 	char *newstr;
 
-	for (len1 = 0 ; str[len1] != '\0' ; len1++)
-	;
-
-	newstr = malloc(sizeof(char) * len1 + 1);
-
 	if (str == NULL)
 	{
 		return (NULL);
 	}
+
+	for (len1 = 0 ; str[len1] != '\0' ; len1++)
+	;
+
+	newstr = malloc(sizeof(char) * len1 + 1);
 
 	if (newstr == NULL)
 	{
