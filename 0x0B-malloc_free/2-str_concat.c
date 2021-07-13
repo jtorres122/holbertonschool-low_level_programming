@@ -20,10 +20,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	else if (s1 == NULL && s2 == NULL)
-	{
-		return (NULL);
-	}
 
 	for (len1 = 0 ; s1[len1] != '\0' ; len1++)
 	;
@@ -34,6 +30,11 @@ char *str_concat(char *s1, char *s2)
 	sum = len1 + len2;
 
 	s3 = malloc(sizeof(char) * sum + 1);
+
+	if (s3 == NULL)
+	{
+		return (NULL);
+	}
 
 	for (len3 = 0 ; s1[len3] != '\0' ; len3++)
 	{
