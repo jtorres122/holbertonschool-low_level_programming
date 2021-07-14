@@ -1,4 +1,6 @@
 #include "holberton.h"
+int _strlen(char *s);
+int concater(char *str, char *ptr, int idx);
 
 /**
  * str_concat - function
@@ -8,44 +10,55 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int len1, len2, len3, len4;
-	int sum;
+	int size, idx;
 	char *s3;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
 
 	if (s2 == NULL)
-	{
 		s2 = "";
-	}
 
-	for (len1 = 0 ; s1[len1] != '\0' ; len1++)
-	;
+	size = _strlen(s1) + _strlen(s2);
 
-	for (len2 = 0 ; s2[len2] != '\0' ; len2++)
-	;
-
-	sum = len1 + len2;
-
-	s3 = malloc(sizeof(char) * sum + 1);
-
+	s3 = malloc((sizeof(char) * size) + 1);
 	if (s3 == NULL)
-	{
 		return (NULL);
-	}
 
-	for (len3 = 0 ; s1[len3] != '\0' ; len3++)
-	{
-		s3[len3] = s1[len3];
-	}
-
-	for (len4 = 0 ; s2[len4] != '\0' ; len3++, len4++)
-	{
-		s3[len3] = s2[len4];
-	}
+	idx = concater(s1, s3, 0);
+	idx = concater(s2, s3, idx);
 
 	return (s3);
+}
+
+/**
+ * concater - function
+ * @str: parameter
+ * @ptr: parameter
+ * @idx: parameter
+ * Return: idx
+ */
+int concater(char *str, char *ptr, int idx)
+{
+	int index;
+
+	for (index = 0 ; str[index] != '\0' ; index++, idx++)
+		ptr[idx] = str[index];
+
+	return (idx);
+}
+
+/**
+ * _strlen - function
+ * @s: parameter
+ * Return: 0
+ */
+int _strlen(char *s)
+{
+	int index;
+
+	for (index = 0 ; s[index] != '\0' ; index++)
+	;
+
+	return (index);
 }
