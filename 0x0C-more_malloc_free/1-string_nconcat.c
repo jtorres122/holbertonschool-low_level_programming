@@ -1,69 +1,58 @@
 #include "holberton.h"
-#include <stdlib.h>
-
-int getLength(char *s1);
+unsigned int _strlen(char *s);
 
 /**
- * *string_nconcat - function concatenates two strings
- * @s1: char array passed to function
- * @s2: char array passed to function
- * @n: num of bytes to allocate/copy from s2
- * Return: pointer to new string
+ * string_nconcat - function
+ * @s1: parameter
+ * @s2: parameter
+ * @n: parameter
+ * Return: char
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-    char *concatenatedString;
-    unsigned int arrayLength1, arrayLength2, count, count2;
+	unsigned int lens1, lens2;
+	char *s3;
 
-    if (s1 == NULL)
-    {
-        s1 = "";
-    }
-    if (s2 == NULL)
-    {
-        s2 = "";
-    }
+	if (s1 == NULL)
+		s1 = "";
 
-    arrayLength1 = getLength(s1);
-    arrayLength2 = getLength(s2);
+	if (s2 == NULL)
+		s2 = "";
 
-    if (!(n >= arrayLength2))
-    {
-        arrayLength2 -= n;
-    }
+	lens1 = _strlen(s1);
+	lens2 = _strlen(s2);
 
-    concatenatedString = malloc(sizeof(char) * (arrayLength1 + arrayLength2) + 3);
-    if (concatenatedString == NULL)
-    {
-        return (NULL);
-    }
+	if (n < lens2)
+		lens2 = n;
 
-    for (count = 0; s1[count] != '\0'; count++)
-    {
-        concatenatedString[count] = s1[count];
-    }
-    for (count2 = 0; s2[count2] != '\0' && count2 < n; count2++)
-    {
-        concatenatedString[count] = s2[count2];
-        count++;
-    }
-    concatenatedString[count] = '\0';
+	s3 = malloc((sizeof(char) * lens1 + lens2) + 1);
+	if (s3 == NULL)
+		return (NULL);
 
-    return (concatenatedString);
+	for (lens1 = 0 ; s1[lens1] != '\0' ; lens1++)
+		s3[lens1] = s1[lens1];
+
+	for (lens2 = 0 ; s2[lens2] != '\0' && lens2 < n ; lens2++)
+	{
+		s3[lens1] = s2[lens2];
+		lens1++;
+	}
+
+	s3[lens1] = '\0';
+	return (s3);
 }
 
 /**
- * getLength - function gets length of array
- * @s: char array passed
- * Return: arrayLength
+ * _strlen - function
+ * @s: parameter
+ * Return: 0
  */
-int getLength(char *s)
+unsigned int _strlen(char *s)
 {
-    int count, arrayLength = 0;
+	unsigned int index;
 
-    for (count = 0; s[count] != '\0'; count++)
-    {
-        arrayLength++;
-    }
-    return (arrayLength);
+	for (index = 0 ; s[index] != '\0' ; index++)
+	;
+
+	return (index);
 }
