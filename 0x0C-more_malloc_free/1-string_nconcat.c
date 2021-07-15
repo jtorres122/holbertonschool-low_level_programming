@@ -32,8 +32,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (lens1 = 0 ; s1[lens1] != '\0' ; lens1++)
 		s3[lens1] = s1[lens1];
 
-	for (lens2 = 0 ; s2[lens2] != '\0' && lens2 < n ; lens2++, lens1++)
+	for (lens2 = 0 ; s2[lens2] != '\0' && lens2 < n ; lens2++)
+	{
 		s3[lens1] = s2[lens2];
+		lens1++;
+	}
 
 	s3[lens1] = '\0';
 	return (s3);
