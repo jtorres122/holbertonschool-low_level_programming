@@ -1,5 +1,5 @@
 #include "holberton.h"
-int _strlen(char *s);
+unsigned int _strlen(char *s);
 
 /**
  * string_nconcat - function
@@ -10,14 +10,14 @@ int _strlen(char *s);
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int lens1;
+	unsigned int lens1, lens2;
 	char *s3;
 
 	if (s1 == NULL)
 		s1 = "";
 
 	if (s2 == NULL)
-		S2 = "";
+		s2 = "";
 
 	lens1 = _strlen(s1);
 
@@ -27,6 +27,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		lens1 += _strlen(s2);
 
 	s3 = malloc(sizeof(char) * lens1);
+	if (s3 == NULL)
+		return (NULL);
+
+	for (lens1 = 0 ; s1[lens1] != '\0' ; lens1++)
+		s3[lens1] = s1[lens1];
+
+	for (lens2 = 0 ; s2[lens2] != '\0' && lens2 < n ; lens2++, lens1++)
+		s3[lens1] = s2[lens2];
+
+	return (s3);
 }
 
 /**
@@ -34,9 +44,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  * @s: parameter
  * Return: 0
  */
-int _strlen(char *s)
+unsigned int _strlen(char *s)
 {
-	int index;
+	unsigned int index;
 
 	for (index = 0 ; s[index] != '\0' ; index++)
 	;
