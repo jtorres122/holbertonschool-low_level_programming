@@ -20,13 +20,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	lens1 = _strlen(s1);
+	lens2 = _strlen(s2);
 
-	if (n < _strlen(s2))
-		lens1 += n;
-	else
-		lens1 += _strlen(s2);
+	if (n < lens2)
+		lens2 -= n;
 
-	s3 = malloc((sizeof(char) * lens1) + 3);
+	s3 = malloc((sizeof(char) * lens1 + lens2) + 3);
 	if (s3 == NULL)
 		return (NULL);
 
