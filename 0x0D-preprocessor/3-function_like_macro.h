@@ -1,6 +1,6 @@
-#ifndef _PI_H_
-#define _PI_H_
+#ifndef _FUNCTION_LIKE_MACRO_H_
+#define _FUNCTION_LIKE_MACRO_H_
 
 #define ABS(n) ((n<0)?(-n):(n))
 
-#endif /* _PI_H_ */
+#endif /* _FUNCTION_LIKE_MACRO_H_ */
