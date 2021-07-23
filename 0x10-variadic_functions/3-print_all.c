@@ -10,6 +10,12 @@ void print_all(const char * const format, ...)
 	char *str, *comma = "";
 	va_list list;
 
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
+
 	va_start(list, format);
 
 	while (format[parse] != '\0')
