@@ -15,7 +15,6 @@ void print_all(const char * const format, ...)
 		printf("\n");
 		return;
 	}
-
 	va_start(list, format);
 	while (format[parse] != '\0')
 	{
@@ -23,24 +22,24 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				printf("%s%c", comma, va_arg(list, int));
+				comma = ", ";
 				break;
-
 			case 'i':
 				printf("%s%i", comma, va_arg(list, int));
+				comma = ", ";
 				break;
-
 			case 'f':
 				printf("%s%f", comma, va_arg(list, double));
+				comma = ", ";
 				break;
-
 			case 's':
 				str = va_arg(list, char *);
 				if (str == NULL)
 					str = "(nil)";
 				printf("%s%s", comma, str);
+				comma = ", ";
 				break;
 		}
-		comma = ", ";
 		parse++;
 	}
 	printf("\n");
