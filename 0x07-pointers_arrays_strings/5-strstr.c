@@ -20,12 +20,12 @@ char *_strstr(char *haystack, char *needle)
 		{
 			if (needle[idx2 + 1] == '\0')
 			{
-				return (haystack += mover);
+				return (haystack += (mover - 1));
 			}
 			idx1++;
 			idx2++;
 		}
 		idx1 = mover;
 	}
-	return (0);
+	return (NULL);
 }
