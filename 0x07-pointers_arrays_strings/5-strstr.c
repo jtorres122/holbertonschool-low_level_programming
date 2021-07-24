@@ -27,5 +27,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		idx1 = mover;
 	}
-	return (NULL);
+	return (0);
 }
