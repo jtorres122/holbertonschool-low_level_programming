@@ -8,7 +8,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int idx1, mover,idx2 = 0;
+	int idx1, mover, idx2 = 0;
 
 	if (*needle == '\0')
 		return (NULL);
