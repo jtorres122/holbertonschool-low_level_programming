@@ -9,7 +9,7 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int idx1, mover, idx2 = 0;
-	
+
 	for (idx1 = 0 ; haystack[idx1] != '\0' ; idx1++)
 	{
 		mover = idx1;
