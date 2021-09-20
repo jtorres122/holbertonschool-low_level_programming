@@ -49,3 +49,23 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	return (new);
 }
+
+/**
+ * dlistint_len - function
+ * @h: parameter
+ * Return: the number of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t counter = 0;
+
+	if (h == NULL)
+		return (0);
+
+	while (h)
+	{
+		h = h->next;
+		counter++;
+	}
+	return (counter);
+}
