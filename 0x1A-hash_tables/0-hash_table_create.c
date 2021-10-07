@@ -3,12 +3,12 @@
 /**
  * hash_table_create - function creates a hash table
  * @size: parameter size is the size of the array
- * Return: Pointer to the newly created hash table or NULL if something went wrong
+ * Return: Pointer to the newly created hash table or NULL
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *new_hash = NULL;
-	long unsigned int idx;
+	unsigned long int idx;
 
 	if (size == 0)
 		return (NULL);
